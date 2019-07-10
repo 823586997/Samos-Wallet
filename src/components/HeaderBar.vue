@@ -47,9 +47,9 @@
 
 <script>
   import * as config from '../config.js'
-  import logo from './../assets/img/logo.svg'
+  import logo from './../assets/img/samos-logo.svg'
   //import testnetLogo from './../assets/img/logo-test-black.svg'
-  import testnetLogo from './../assets/img/alpha-black.svg'
+  import testnetLogo from './../assets/img/samos-logo.svg'
   import {superLong, chainIdNumber, addressInfo} from '@/api/util'
 
   export default {
@@ -166,7 +166,7 @@
       width: 120px;
       float: left;
       img {
-        margin: 20px 0 0 0;
+        margin: 32px 0 0 0;
         width: 100%;
       }
     }

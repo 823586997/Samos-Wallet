@@ -179,10 +179,10 @@
             border-bottom: 2px dotted @Dcolour;
           }
           .Ndotted {
-            border-bottom-color: @Ncolour;
+            border-bottom-color: @Ccolour;
           }
           .Ncolor {
-            color: @Ncolour;
+            color: @Ccolour;
           }
           .ico {
             i {

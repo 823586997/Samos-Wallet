@@ -120,6 +120,7 @@
     },
     components: {},
     created() {
+
       this.addressInfo = addressInfo(1);
       setInterval(() => {
         this.addressInfo = addressInfo(1);

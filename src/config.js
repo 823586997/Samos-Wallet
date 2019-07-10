@@ -9,18 +9,25 @@ export const RUN_DEV = false;
 //运行模式（true:electron窗体模式，false:浏览器模式）
 export const RUN_PATTERN = false;
 //正式、测试网络的api
-export let API_URL = localStorage.hasOwnProperty("urls") ? JSON.parse(localStorage.getItem("urls")).urls : 'http://apitn1.nulscan.io/';
+// export let API_URL = localStorage.hasOwnProperty("urls") ? JSON.parse(localStorage.getItem("urls")).urls : 'http://apitn1.nulscan.io/';
+// setInterval(() => {
+//   API_URL = localStorage.hasOwnProperty("urls") ? JSON.parse(localStorage.getItem("urls")).urls : 'http://apitn1.nulscan.io/';
+// }, 500);
+
+export let API_URL = localStorage.hasOwnProperty("urls") ? JSON.parse(localStorage.getItem("urls")).urls : 'http://192.168.3.18:18003/';
 setInterval(() => {
-  API_URL = localStorage.hasOwnProperty("urls") ? JSON.parse(localStorage.getItem("urls")).urls : 'http://apitn1.nulscan.io/';
+  API_URL = localStorage.hasOwnProperty("urls") ? JSON.parse(localStorage.getItem("urls")).urls : 'http://192.168.3.18:18003/';
 }, 500);
+
 //请求最迟时间
 export const API_TIME = IS_DEV ? '9000' : '8000';
 //默认节点服务列表
 export const defaultData = [
-  {name: 'Official',chainId:2,chainName:'tNULS', urls: 'http://192.168.1.192:18003/', delay: '10ms', state: 0, isDelete: false},
-  {name: 'Official',chainId:2,chainName:'tNULS', urls: 'http://192.168.1.40:18003/', delay: '10ms', state: 1, isDelete: false},
+  {name: 'Official',chainId:2,chainName:'tNULS', urls: 'http://192.168.3.18:18003/', delay: '10ms', state: 0, isDelete: false},
+  {name: 'Official',chainId:2,chainName:'tNULS', urls: 'http://192.168.3.18:18003/', delay: '10ms', state: 1, isDelete: false},
 ];
 //默认服务节点地址
-export const defaultUrl ={name: 'Official',chainId:2,chainName:'tNULS', urls: 'http://192.168.1.40:18003/', delay: '10ms', state: 1, isDelete: false};
+export const defaultUrl ={name: 'Official',chainId:2,chainName:'tNULS', urls: 'http://192.168.3.18:18003/', delay: '10ms', state: 1, isDelete: false};
 //默认浏览器地址（跳转地址）
-export const explorerUrl = 'http://alpha.nulscan.io/';
+// export const explorerUrl = 'http://alpha.nulscan.io/';
+export const explorerUrl = 'http://192.168.3.18:18003/';

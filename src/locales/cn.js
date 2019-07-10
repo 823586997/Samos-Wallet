@@ -602,7 +602,7 @@ const cn = {
     "newAddress10": "下一步",
     "newAddress11": "导入钱包",
     "newAddress12": "您的账户地址",
-    "newAddress13": "请勿遗失！ NULS将无法帮助您找回遗失的密钥",
+    "newAddress13": "请勿遗失！ SAMOS将无法帮助您找回遗失的密钥",
     "newAddress14": "请勿向他人分享！ 如在恶意网站使用此文件，您的资金可能面临被盗窃的风险",
     "newAddress15": "请制作备份！ 以防您的电脑故障",
     "newAddress16": "Keystore备份",

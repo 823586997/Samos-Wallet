@@ -213,7 +213,7 @@
       async getAddressInfoByNode(addressInfos) {
         await this.$post('/', 'getAccount', [addressInfos.address])
           .then((response) => {
-            //console.log(response);
+            // console.log(response);
             if (response.hasOwnProperty("result")) {
               let newAddressInfo = addressInfo(0);
               for (let item of newAddressInfo) {
@@ -241,7 +241,7 @@
       getConsensusNodeCount() {
         this.$post('/', 'getConsensusNodeCount', [])
           .then((response) => {
-            //console.log(response);
+            // console.log(response);
             if (response.hasOwnProperty("result")) {
               this.nodeCount = response.result
             } else {
@@ -288,6 +288,7 @@
        * @param type
        **/
       getConsensusNodes(pageIndex, pageSize, type) {
+        // console.log( pageIndex , pageSize , type )
         this.$post('/', 'getConsensusNodes', [pageIndex, pageSize, type])
           .then((response) => {
             console.log(response);
@@ -357,7 +358,7 @@
       getConsensusInfoByAddress(pageIndex, pageSize, address) {
         this.$post('/', 'getAccountConsensus', [pageIndex, pageSize, address])
           .then((response) => {
-            //console.log(response);
+            console.log(response);
             if (response.hasOwnProperty("result")) {
               //循环获取节点列表判断是否有地址创建列表
               for (let item of response.result.list) {

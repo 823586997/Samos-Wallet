@@ -70,7 +70,7 @@
        * 获取主网最新高度和本地高度
        */
       getHeaderInfo() {
-        const url = localStorage.hasOwnProperty('urls') ? JSON.parse(localStorage.getItem('urls')).urls : 'http://192.168.1.40:18003/';
+        const url = localStorage.hasOwnProperty('urls') ? JSON.parse(localStorage.getItem('urls')).urls : 'http://192.168.3.18:18003/';
         const params = {"jsonrpc": "2.0", "method": "getInfo", "params": [chainID()], "id": 5898};
         axios.post(url, params)
           .then((response) => {
