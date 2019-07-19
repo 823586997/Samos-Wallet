@@ -14,20 +14,20 @@ export const RUN_PATTERN = false;
 //   API_URL = localStorage.hasOwnProperty("urls") ? JSON.parse(localStorage.getItem("urls")).urls : 'http://apitn1.nulscan.io/';
 // }, 500);
 
-export let API_URL = localStorage.hasOwnProperty("urls") ? JSON.parse(localStorage.getItem("urls")).urls : 'http://192.168.3.18:18003/';
+export let API_URL = localStorage.hasOwnProperty("urls") ? JSON.parse(localStorage.getItem("urls")).urls : 'http://152.136.226.117:18003/';
 setInterval(() => {
-  API_URL = localStorage.hasOwnProperty("urls") ? JSON.parse(localStorage.getItem("urls")).urls : 'http://192.168.3.18:18003/';
+  API_URL = localStorage.hasOwnProperty("urls") ? JSON.parse(localStorage.getItem("urls")).urls : 'http://152.136.226.117:18003/';
 }, 500);
 
 //请求最迟时间
 export const API_TIME = IS_DEV ? '9000' : '8000';
 //默认节点服务列表
 export const defaultData = [
-  {name: 'Official',chainId:2,chainName:'tNULS', urls: 'http://192.168.3.18:18003/', delay: '10ms', state: 0, isDelete: false},
-  {name: 'Official',chainId:2,chainName:'tNULS', urls: 'http://192.168.3.18:18003/', delay: '10ms', state: 1, isDelete: false},
+  {name: 'Official',chainId:2,chainName:'tNULS', urls: 'http://152.136.119.205:18003/', delay: '10ms', state: 0, isDelete: false},
+  {name: 'Official',chainId:2,chainName:'tNULS', urls: 'http://152.136.226.117:18003/', delay: '10ms', state: 1, isDelete: false},
 ];
 //默认服务节点地址
-export const defaultUrl ={name: 'Official',chainId:2,chainName:'tNULS', urls: 'http://192.168.3.18:18003/', delay: '10ms', state: 1, isDelete: false};
+export const defaultUrl ={name: 'Official',chainId:2,chainName:'tNULS', urls: 'http://152.136.119.205:18003/', delay: '10ms', state: 1, isDelete: false};
 //默认浏览器地址（跳转地址）
 // export const explorerUrl = 'http://alpha.nulscan.io/';
-export const explorerUrl = 'http://192.168.3.18:18003/';
+export const explorerUrl = 'http://152.136.119.205:18003/';

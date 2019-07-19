@@ -70,7 +70,7 @@
         </li>
         <li v-if="txInfo.type ===9">
           {{$t('public.deposit')}}
-          <label>{{txInfo.txData.deposit/100000000}}<span class="fCN">NULS</span></label>
+          <label>{{txInfo.txData.deposit/100000000}}<span class="fCN">SAMO</span></label>
         </li>
         <li v-if="txInfo.type ===9">{{$t('public.credit')}} <label>{{txInfo.txData.creditValue}}</label></li>
 
@@ -82,7 +82,7 @@
           </label>
         </li>
         <li v-if="txInfo.type ===15 || txInfo.type ===16">Price<label>{{txInfo.txData.resultInfo.price}}<span
-                class="fCN">NULS</span> / GAS</label></li>
+                class="fCN">SAMO</span> / GAS</label></li>
         <li v-if="txInfo.type ===15 || txInfo.type ===16">Gas Used<label>{{txInfo.txData.resultInfo.gasUsed}}</label>
         </li>
         <li v-if="txInfo.type ===15 || txInfo.type ===16">Gas Limit<label>{{txInfo.txData.resultInfo.gasLimit}}
@@ -181,7 +181,7 @@
         outputData: [],//输出
         tokenTransfersData: [],//代币转账data
         dataDialog: false,//data 弹框
-        symbol: 'NULS',
+        symbol: 'SAMO',
       };
     },
     created() {

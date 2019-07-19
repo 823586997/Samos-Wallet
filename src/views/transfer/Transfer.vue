@@ -59,7 +59,7 @@
             <i class="el-icon-warning"></i>
           </el-tooltip>
           {{$t('public.fee')}}: {{fee}}
-          <span class="fCN">{{isCross ? 'NULS':changeAssets.symbol}}</span>
+          <span class="fCN">{{isCross ? 'SAMO': changeAssets.symbol}}</span>
         </div>
         <el-form-item class="form-next">
           <el-button type="success" @click="submitForm('transferForm')" :disabled="isNext">{{$t('public.next')}}
@@ -180,7 +180,7 @@
         transferForm: {
           fromAddress: '',
           toAddress: '',
-          type: this.$route.query.accountType ? this.$route.query.accountType : 'NULS',
+          type: this.$route.query.accountType ? this.$route.query.accountType : 'SAMO',
           amount: '',
           senior: false,
           gas: this.gasNumber,
@@ -319,7 +319,7 @@
         this.assetsList = [...basicAssets, ...contractAssets, ...crossAssets];
         let isNuls = false; //是否有nuls资产
         for (let item of this.assetsList) {
-          if (item.symbol === 'NULS') {
+          if (item.symbol === 'SAMO') {
             isNuls = true
           }
         }
@@ -327,7 +327,7 @@
         if (!isNuls) {
           let newNulsAssets = {
             type: 1,
-            symbol: 'NULS',
+            symbol: 'SAMO',
             chainId: 2,
             assetId: 1,
             balance: 0
@@ -359,7 +359,7 @@
             //跨链交易判断本资产及NULS是否够手续费
             for (let item of this.assetsList) {
               //判断nuls资产是否够手续费
-              let isNulsFee = item.symbol === "NULS" && Number(item.balance) < 0.01;
+              let isNulsFee = item.symbol === "SAMO" && Number(item.balance) < 0.01;
               //判断本链资产是否够手续费
               let isChainFee = chainID() === item.chainId && Number(item.balance) < 0.01;
               if (isNulsFee) {
@@ -418,7 +418,7 @@
        * @param type 0：首次进入加载 1：填写地址以后判断默认为nuls
        **/
       changeNuls(type = 1) {
-        let defaultType = 'NULS';
+        let defaultType = 'SAMO';
         if (type === 0) {
           if (this.$route.query.accountType) {
             defaultType = this.$route.query.accountType
