@@ -7,6 +7,7 @@ const en = {
     "consensus": "Consensus",
     "contracts": "Contracts",
     "application":"Application",
+    "migrate":'TokenSwap',
     "set":"Set",
     "addressList":"Address List",
     "nodeList":"Node List",
@@ -777,6 +778,16 @@ const en = {
     "3": "A new version has been detected and is being downloaded...",
     "4": "Now the latest version is in use, no updates are needed.",
   },
+
+  "migrate":{
+    "address":"Token swap address",
+    "newAddress":"Token new address",
+    "getNewAddress":'Get new address',
+    "copyNewAddress": 'Copy new address',
+    "msg1":'Please open the original samos wallet and transfer SAMO COINS to the new samos address to complete the address transfer',
+    'msg2':'Wait a moment to open the web wallet can get all the original SAMO COINS'
+  },
+
   ...enLocale
 
 };

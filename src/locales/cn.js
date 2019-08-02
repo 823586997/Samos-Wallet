@@ -6,6 +6,7 @@ const cn = {
     "transfer": "转账",
     "consensus": "共识",
     "contracts": "合约",
+    "migrate":"迁移",
     "application": "应用",
     "set": "设置",
     "addressList": "地址管理",
@@ -602,7 +603,7 @@ const cn = {
     "newAddress10": "下一步",
     "newAddress11": "导入钱包",
     "newAddress12": "您的账户地址",
-    "newAddress13": "请勿遗失！ NULSS将无法帮助您找回遗失的密钥",
+    "newAddress13": "请勿遗失！ SAMOS将无法帮助您找回遗失的密钥",
     "newAddress14": "请勿向他人分享！ 如在恶意网站使用此文件，您的资金可能面临被盗窃的风险",
     "newAddress15": "请制作备份！ 以防您的电脑故障",
     "newAddress16": "Keystore备份",
@@ -782,6 +783,16 @@ const cn = {
     "3": "检测到新版本，正在下载…",
     "4": "现在使用的就是最新版本，不用更新",
   },
+
+  "migrate":{
+    "address":"迁移地址",
+    "newAddress":"新地址",
+    "getNewAddress":'获取新地址',
+    "copyNewAddress":'复制新地址',
+    "msg1":'请打开原samos钱包并把SAMO币转到新的samos地址里面，即可完成地址转移',
+    'msg2':'稍等一会打开网页钱包即可获取原有的SAMO币'
+  },
+
   ...zhLocale
 };
 export default cn

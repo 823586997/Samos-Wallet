@@ -274,7 +274,6 @@
         this.toUrl('home');
         //this.getAccount(newAddressInfo);
       },
-
       /**
        * 连接跳转
        * @param name
@@ -356,7 +355,7 @@
         }
         .btn {
           .el-button--info {
-            margin: 50px 0 20px 0 !important;
+            margin: 0 0 20px 0 !important;
           }
         }
       }

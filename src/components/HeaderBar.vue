@@ -12,6 +12,7 @@
           <el-menu-item index="consensus" :disabled="addressList.length === 0">{{$t('nav.consensus')}}
           </el-menu-item>
           <el-menu-item index="contract" :disabled="addressList.length === 0">{{$t('nav.contracts')}}</el-menu-item>
+          <el-menu-item index="migrate" :disabled="addressList.length === 0">{{$t('nav.migrate')}}</el-menu-item>
         </el-menu>
       </div>
       <div class="tool">

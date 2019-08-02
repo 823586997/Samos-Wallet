@@ -95,6 +95,11 @@ export default new Router({
       path: '/nodeService',
       name: 'nodeService',
       component: resolve => require(['@/views/set/NodeService.vue'], resolve)
+    },
+    {
+      path: '/migrate',
+      name: 'migrate',
+      component: resolve => require(['@/views/migrate/Migrate.vue'],resolve)
     }
 
 
