@@ -76,7 +76,7 @@ export function timesDecimals(nu, decimals = 8) {
  * @returns {number}
  */
 export function chainID() {
-  return localStorage.hasOwnProperty('urls') ? JSON.parse(localStorage.getItem('urls')).chainId : 2
+  return localStorage.hasOwnProperty('urls') ? JSON.parse(localStorage.getItem('urls')).chainId : 3
 }
 
 /**
