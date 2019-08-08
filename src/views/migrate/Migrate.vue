@@ -60,7 +60,7 @@ export default {
             // form 请求
             event.preventDefault();
             let formData = new FormData();
-            formData.append("NulsAddress",Address);
+            formData.append("NulsAddress",encodeURIComponent(Address));
             let config = {
                 headers: {
                     "Content-Type": "multipart/form-data"
