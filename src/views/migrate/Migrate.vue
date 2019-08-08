@@ -1,6 +1,6 @@
 <template>
    <div class="Migrate">
-       <h3 class='title'>{{ $t('nav.migrate') }}</h3>
+       <h3 class='title'>{{ $t('migrate.title') }}</h3>
        <div class='Migrate-cen'>
             <el-row :gutter="20">
                 <el-col :span="12" :offset="6">
@@ -8,20 +8,26 @@
                         <div>
                             <p>{{ $t('migrate.address') }}：</p>    
                             <div>
-                                <el-input v-model='Address'></el-input>
-                                <el-button @click='getNewAddress()' size='mini' type="primary">{{ $t('migrate.getNewAddress') }}</el-button>
+                                <form>
+                                    <el-input v-model='Address'></el-input>
+                                    <el-button @click='getNewAddress()' size='mini' type="primary">{{ $t('migrate.getNewAddress') }}</el-button>
+                                </form>
                             </div>
                         </div>    
                         <div>
                             <p>{{ $t('migrate.newAddress') }}：</p>    
                             <div>
-                                <el-input v-model='NewAddress' disabled></el-input>
-                                <el-button id='CopyAddress' :data-clipboard-text="NewAddress" @click='CopyNewAddress()' size='mini' type="primary">{{ $t('migrate.copyNewAddress') }}</el-button>
+                                <form>
+                                    <el-input v-model='NewAddress' disabled></el-input>
+                                    <el-button id='CopyAddress' :data-clipboard-text="NewAddress" @click='CopyNewAddress()' size='mini' type="primary">{{ $t('migrate.copyNewAddress') }}</el-button>
+                                </form>
                             </div>
                         </div> 
                         <div class="tip bg-gray">
-                            <p><i></i>{{$t('migrate.msg1')}}</p>
-                            <p><i></i>{{$t('migrate.msg2')}}</p>
+                            <p>{{$t('migrate.msg1')}}</p>
+                            <p>{{$t('migrate.msg2')}}</p>
+                            <p>{{$t('migrate.msg3')}}</p>
+                            <p>{{$t('migrate.msg4')}}</p>
                         </div>
                     </div>
                 </el-col>
@@ -33,6 +39,8 @@
 <script>
 // 复制地址插件
 import Clipboard from 'clipboard';
+import axios from 'axios';
+import { JSEncrypt } from 'jsencrypt';
 export default {
     name: '',
     data() {
@@ -43,10 +51,37 @@ export default {
     },
     methods:{
         getNewAddress(){
-            this.$post('/','/addressSwap',{
-                tSamoAddress : this.Address
-            }).then( (res) => {
-                console.log(res);
+            // 秘钥
+            let publicKey = "-----BEGIN RSA PRIVATE KEY-----MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBJ+aNypoRdXWmbSQx+K7U5At40jfOfW8JxhlZH5Cy8FbT5+OY//Wwau+q/IpiAZBEORiwsMoqkmVvK2SH0k08UH2T/p6dnmloTsEN/q+VI1kV58bzAG2Sr0v7urDQHXkg21V46PM+tIJUNuFXa6APQujmoZfG1PPICtOM/nhAwQIDAQAB-----END RSA PRIVATE KEY-----"
+            // 加密
+            var encrypt = new JSEncrypt();
+            encrypt.setPublicKey(publicKey);
+            let Address = encrypt.encrypt(this.Address);
+            // form 请求
+            event.preventDefault();
+            let formData = new FormData();
+            formData.append("NulsAddress",Address);
+            let config = {
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                }
+            }
+            // 创建axios实例
+            let api = axios.create({
+                baseURL: 'http://wallet.samos.io/', // 请求的域名
+                timeout: 1000, // 设置请求的超时时长，超过时长报401超时
+            })
+            let url = '/addressSwap';
+            api.post(url,formData,config)
+            .then( (res) => {
+                let data = res.data;
+                if( data.code == 0 ){
+                    this.NewAddress = data.data.samos;
+                }else{
+                    this.$message({
+                        message: data.msg
+                    })
+                }
             })
         },
         CopyNewAddress(){
@@ -78,7 +113,7 @@ export default {
     position: relative;
     .Migrate-cen{
         width: 1200px;
-        height: 400px;
+        // height: 430px;
         background: white;
         border: 1px solid #ddd;
         position: absolute;
@@ -86,13 +121,16 @@ export default {
         left: 0;
         right: 0;
         margin: 0 auto 60px;
-        padding: 60px 0;
+        padding: 60px 30px 0 0;
         .onee{
             height: 100%;
             >div{
                 margin-bottom: 20px;
                 >div{
-                    display: flex;
+                    form{
+                       display: flex; 
+                    }
+                    
                 }
                 p{
                     font-size: 14px;

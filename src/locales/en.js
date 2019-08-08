@@ -780,12 +780,15 @@ const en = {
   },
 
   "migrate":{
-    "address":"Token swap address",
-    "newAddress":"Token new address",
+    "title":'Migrate Samos 1.0 primary network assets to Samos 2.0 primary network assets',
+    "address":"Samos 2.0 mainnet address",
+    "newAddress":"Samos 1.0 recycling address",
     "getNewAddress":'Get new address',
     "copyNewAddress": 'Copy new address',
-    "msg1":'Please open the original samos wallet and transfer SAMO COINS to the new samos address to complete the address transfer',
-    'msg2':'Wait a moment to open the web wallet can get all the original SAMO COINS'
+    "msg1":'Step 1：Fill your Samos 2.0 mainnet SAMO address.',
+    'msg2':'Step 2：Click the butto to get the Samos 1.0 mainnet recycling address.please do not trust the recycling address from any official mail, telegram, WeChat, Twitter.',
+    'msg3':'Step 3：Open the orginal Samos 1.0 wallet(http://samos.io/wallet/), and transfer the SAMO token to the recycling address.',
+    'msg4':'Step 4：Please backup the transfer screenshot and other information .If you have not received the new Samos 2.0 mainnet SAMO for more than 24 hours, please  contact our staff(info@samos.io).'
   },
 
   ...enLocale

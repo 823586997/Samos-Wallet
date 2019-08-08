@@ -232,8 +232,10 @@
         const newAddressInfo = nuls.importByKey(chainid, pri, password);
         if (newAddressInfo.address === this.newAddressInfo.address) {
           if (this.backType === 0) {
+            console.log( require('electron').remote )
             const {dialog} = require('electron').remote;
-            //console.log(dialog);
+            console.log(dialog);
+            console.log(fs);
             dialog.showOpenDialog({
               title: that.$t('newAddress.newAddress28'),
               properties: ['openFile', 'openDirectory']

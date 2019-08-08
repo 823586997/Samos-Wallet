@@ -785,12 +785,15 @@ const cn = {
   },
 
   "migrate":{
-    "address":"迁移地址",
-    "newAddress":"新地址",
-    "getNewAddress":'获取新地址',
-    "copyNewAddress":'复制新地址',
-    "msg1":'请打开原samos钱包并把SAMO币转到新的samos地址里面，即可完成地址转移',
-    'msg2':'稍等一会打开网页钱包即可获取原有的SAMO币'
+    "title":'迁移Samos 1.0主网资产到Samos 2.0主网资产',
+    "address":"Samos 2.0主网地址",
+    "newAddress":"Samos 1.0 换币地址",
+    "getNewAddress":'获得地址',
+    "copyNewAddress":'复制地址',
+    "msg1":'第一步：填入Samos 2.0主网地址。',
+    'msg2':'第二步：点击获得Samos 1.0主网换币地址，请认准这个唯一地址，不轻信来自任何官方的邮件、电报、微信、推特提供的换币地址。',
+    'msg3':'第三步：使用Samos 1.0的钱包( http://samos.io/wallet )，将SAMO币发送到第二步获得的换币地址。',
+    'msg4':'第四步：请备份好转账截图等信息，若您在转账后超过24小时仍未收到Samos 2.0主网资产，请联系我方工作人员( info@samos.io )。'
   },
 
   ...zhLocale

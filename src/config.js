@@ -23,11 +23,11 @@ setInterval(() => {
 export const API_TIME = IS_DEV ? '9000' : '8000';
 //默认节点服务列表
 export const defaultData = [
-  {name: 'Official',chainId:3,chainName:'SAMO', urls: 'http://152.136.119.205:18003/', delay: '10ms', state: 0, isDelete: false},
+  // {name: 'Official',chainId:3,chainName:'SAMO', urls: 'http://152.136.119.205:18003/', delay: '10ms', state: 0, isDelete: false},
   {name: 'Official',chainId:3,chainName:'SAMO', urls: 'http://152.136.226.117:18003/', delay: '10ms', state: 1, isDelete: false},
 ];
 //默认服务节点地址
-export const defaultUrl ={name: 'Official',chainId:3,chainName:'SAMO', urls: 'http://152.136.119.205:18003/', delay: '10ms', state: 1, isDelete: false};
+export const defaultUrl ={name: 'Official',chainId:3,chainName:'SAMO', urls: 'http://152.136.226.117:18003/', delay: '10ms', state: 1, isDelete: false};
 //默认浏览器地址（跳转地址）
 // export const explorerUrl = 'http://alpha.nulscan.io/';
-export const explorerUrl = 'http://152.136.119.205:18003/';
+export const explorerUrl = 'http://152.136.226.117:18003/';
